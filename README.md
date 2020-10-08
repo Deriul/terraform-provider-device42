@@ -6,7 +6,19 @@ It is my last first attempt actually to start coding. Please do not use this pro
 ## How to build
 ```
 git clone https://github.com/Deriul/terraform-provider-device42.git
-cd terraform-provider-device42 && go build && mv main ~/.terraform.d/plugins/linux_amd64/terraform-provider-device42
+cd terraform-provider-device42 && go build && mv terraform-provider-device42 ~/.terraform.d/plugins/registry.terraform.io/deriul/device42/0.0.1/linux_amd64
+```
+
+```
+terraform {
+  required_providers {
+    device42 = {
+      source = "deriul/device42"
+      version = "0.0.1"
+    }
+  }
+  required_version = ">= 0.13"
+}
 ```
 
 ## How to use
